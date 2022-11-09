@@ -707,7 +707,8 @@ struct ethsock *ethsock_create(const char *intf, uint16_t protocol)
 		}
 	}
 
-	err = system("nmcli -v > /dev/null");
+	//err = system("nmcli -v > /dev/null");
+	err = 1; // nmcli is always disabled
 	if (!err) {
 		err = systemf("nmcli -f GENERAL.STATE device show %s | grep -q unmanaged", sock->intf);
 		if (!err) {

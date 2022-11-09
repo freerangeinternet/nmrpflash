@@ -249,7 +249,7 @@ static uint8_t *ethsock_get_hwaddr_fake(struct ethsock* sock)
 	return hwaddr;
 }
 #else
-#define NMRP_ADVERTISE_TIMEOUT 60
+#define NMRP_ADVERTISE_TIMEOUT 60 * 60 * 24 * 365
 #endif
 
 static int pkt_send(struct ethsock *sock, struct nmrp_pkt *pkt)
